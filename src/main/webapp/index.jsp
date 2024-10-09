@@ -23,7 +23,7 @@ pageEncoding="UTF-8"%>
       }
 
       body {
-        background: #eaeaea;
+        background: #E2F3FB;
         overflow: hidden;
       }
 
@@ -154,15 +154,14 @@ pageEncoding="UTF-8"%>
 
       .button button:hover {
         background: #ababab;
-        color: #fff;
+        color:#015f85 ;
       }
-
       /* Navbar styling */
 nav {
-    position: fixed;
+    position: absolute;
     z-index: 99;
     width: 100%;
-    background: #027AA8;
+    background: #FFF;
 }
 
 nav .wrapper {
@@ -228,7 +227,7 @@ nav .wrapper {
 }
 
 .nav-links li a {
-    color: #f2f2f2;
+    color: #027AA8;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -340,6 +339,52 @@ nav input {
     display: none;
 }
 
+.carousel {
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+.card-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 0 10px;
+  width: 90px;
+}
+
+.card-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card-desc {
+  flex: 1;
+}
+
 
       .body-text {
         position: absolute;
@@ -354,11 +399,11 @@ nav input {
         font-size: 45px;
         font-weight: 600;
       }
+      
     </style>
   </head>
 
   <body>
-    <!-- Navbar (from your index.html) -->
     <nav>
       <div class="wrapper">
         <div class="logo">
@@ -376,8 +421,8 @@ nav input {
             ><i class="fas fa-times"></i
           ></label>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Clubs</a></li>
-          <li><a href="#">Feedback</a></li>
+          <li><a href="slider.jsp">Clubs</a></li>
+          <li><a href="clubAdminDash.jsp">Feedback</a></li>
           <li><a href="#">Login</a></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn"
@@ -462,10 +507,54 @@ nav input {
         </div>
       </div>
       <div class="button">
-        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="prev"><i class="fa-solid fa-arrow-right"></i></button>
       </div>
+
+
     </div>
+    <div class="carousel">
+      <div class="slide">
+          <!-- Each group will have a class of 'item' -->
+          <div class="item">
+              <!-- Card Group 1 -->
+              <div class="card-group">
+                  <div class="card">
+                      <img src="image1.jpg" alt="Image 1" class="card-img">
+                      <div class="card-desc">Description 1</div>
+                  </div>
+                  <div class="card">
+                      <img src="image2.jpg" alt="Image 2" class="card-img">
+                      <div class="card-desc">Description 2</div>
+                  </div>
+                  <div class="card">
+                      <img src="image3.jpg" alt="Image 3" class="card-img">
+                      <div class="card-desc">Description 3</div>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <!-- Card Group 2 -->
+              <div class="card-group">
+                  <div class="card">
+                      <img src="image4.jpg" alt="Image 4" class="card-img">
+                      <div class="card-desc">Description 4</div>
+                  </div>
+                  <div class="card">
+                      <img src="image5.jpg" alt="Image 5" class="card-img">
+                      <div class="card-desc">Description 5</div>
+                  </div>
+                  <div class="card">
+                      <img src="image6.jpg" alt="Image 6" class="card-img">
+                      <div class="card-desc">Description 6</div>
+                  </div>
+              </div>
+          </div>
+          <!-- Add more card groups as needed up to 6 groups -->
+      </div>
+  </div>
+
+  </div>
 
     <script>
       let next = document.querySelector(".next");
